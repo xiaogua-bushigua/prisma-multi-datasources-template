@@ -1,0 +1,18 @@
+{
+	"name": "prisma-template",
+	"version": "1.0.0",
+	"description": "a tempalte for initializing prisma scripts",
+	"main": "index.ts",
+	"scripts": {
+		"start": "ts-node index.ts"
+	},
+	"author": "xiaoguabushigua",
+	"license": "ISC",
+	"dependencies": {
+		"@prisma/client": "^5.16.2",
+		"@types/node": "^20.14.10",
+		"prisma": "^5.16.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.3"
+	}
+}

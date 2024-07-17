@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../../node_modules/@prisma-mysql/client"
+}
+
+datasource mongodb {
+  provider = "mongodb"
+  url      = env("MONGODB_URL")
+}
+
+model Finance {
+  id     String @id @default(auto()) @map("_id") @mongodb.ObjectId
+  month  String
+  income Float
+  cost   Float
+}
+
+model Visit {
+  id    String @id @default(auto()) @map("_id") @mongodb.ObjectId
+  month String
+  count Int
+}
+
+model Region {
+  id           String   @id @default(auto()) @map("_id") @mongodb.ObjectId
+  name         String
+  location     String
+  created_time DateTime
+}
